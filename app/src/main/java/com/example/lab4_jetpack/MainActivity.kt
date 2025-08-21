@@ -67,7 +67,7 @@ fun HealthyMenu() {
     ) {
         // Title
         Text(
-            text = "Healthy Recipes",
+            text = "Recetas Saludables",
             style = MaterialTheme.typography.titleLarge.copy(fontWeight = androidx.compose.ui.text.font.FontWeight.Bold),
             color = MaterialTheme.colorScheme.primary,
             modifier = Modifier
@@ -92,7 +92,7 @@ fun HealthyMenu() {
                 TextField(
                     value = nameInput,
                     onValueChange = { nameInput = it },
-                    label = { Text("Recipe Name") },
+                    label = { Text("Nombre de la Receta") },
                     modifier = Modifier.fillMaxWidth(),
                     singleLine = true
                 )
@@ -103,7 +103,7 @@ fun HealthyMenu() {
                 TextField(
                     value = urlInput,
                     onValueChange = { urlInput = it },
-                    label = { Text("Image URL") },
+                    label = { Text("URL de una imagen") },
                     modifier = Modifier.fillMaxWidth(),
                     singleLine = true
                 )
@@ -125,7 +125,7 @@ fun HealthyMenu() {
                         .fillMaxWidth()
                         .height(48.dp)
                 ) {
-                    Text("Add Recipe")
+                    Text("Añadir receta")
                 }
             }
         }
@@ -133,7 +133,7 @@ fun HealthyMenu() {
         // Display message when no recipes are added
         if (recipes.isEmpty()) {
             Text(
-                text = "No recipes added yet. Add one above!",
+                text = "No hay ninguna receta en la lista, añade una arriba",
                 style = MaterialTheme.typography.bodyLarge,
                 color = MaterialTheme.colorScheme.onSurfaceVariant,
                 modifier = Modifier
@@ -166,7 +166,7 @@ fun HealthyMenu() {
                             // Recipe image
                             AsyncImage(
                                 model = recipe.imageURL,
-                                contentDescription = "Recipe image: ${recipe.name}",
+                                contentDescription = "Imagen de la receta: ${recipe.name}",
                                 modifier = Modifier
                                     .size(80.dp)
                                     .padding(end = 16.dp)
